@@ -1,0 +1,137 @@
+{% load staticfiles%}
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/Plantilla.dwt" codeOutsideHTMLIsLocked="false" -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="titulo" -->
+<title>ITT</title>
+<!-- InstanceEndEditable -->
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Satisfy'>
+<link href= "{% static 'css/estilo.css'%}" rel="stylesheet" type="text/css" />
+
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src = "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+<link rel="icon" href="{% static 'img/logo_ITT1.ico'%}" >
+
+</head>
+<script>
+function disabletext(e){
+return false
+}
+function reEnable(){
+return true
+}
+document.onselectstart=new Function ("return false")
+if (window.sidebar){
+document.onmousedown=disabletext
+document.onclick=reEnable
+}
+</script>
+<body><li><center><a href="menu.html"><img src="{% static 'img/encabezado.png'%}" width= 90% height= 28% /></a></center></div></li>
+
+
+<nav class="navbar navbar-inverse" >
+	<div class="container-fluid" >
+		
+
+		<div>
+			<button type ="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="{%url 'menu'%}">ITT</a>
+		</div>
+	
+
+		<div class="collapse navbar-collapse" id ="topNavBar">
+			<ul class="nav navbar-nav">
+				<li class="">
+					<a href="{%url 'mat'%}">
+						<span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;
+						Materias
+					</a>
+				</li>
+
+				<li class="active">
+					<a href="{% url 'doc' %}">
+						<span class="glyphicon glyphicon-apple" aria-hidden="true"></span>&nbsp;
+						Docente
+					</a>
+				</li>
+				<li class="">
+					<a href="{%url 'alum'%}">
+						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;
+						Seleccion de horario
+					</a>
+				</li>
+			</ul>
+
+
+
+			<ul class="nav navbar-nav navbar-right">
+				<li class="">
+					<a href="{% url 'logout'%}">
+						<span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp;
+						Logout
+					</a>
+				</li>
+			</ul>
+		</div>
+
+
+	</div>	
+</nav> 
+
+
+
+
+
+<CENTER><table class="table table-hover" >
+  <center><thead>
+    <tr>
+      
+      <th scope="col" width="10%">NO. DOCENTE</th>
+      <th scope="col">NOMBRE</th>
+       
+      
+    </tr>
+
+    
+  </thead></center> 
+  <tbody>
+    
+    {% for docente in docentes %}
+                        	<tr>
+                        		<td>{{ docente.IdDocente}}</td>
+                        		<td>{{ docente.Nombre}}</td>
+                        		
+                        	</tr>
+                        	{% for materia in docente.Materias.all %}
+                        	<tr>
+                        		<td>{{ materia.IdMateria}}</td>
+                        		<td>{{ materia.Nombre}}</td>
+                        		
+                        	</tr>
+    						{% endfor %}
+    {% endfor %}
+    
+  </tbody>
+</table></CENTER>
+
+
+    
+  	  <div id="creditos">
+    <center>Programacion WEB. Equipo Azul.</br>
+      Proyecto final de la materia.</center>
+    </div>
+    
+</div>
+
+</body>
+<!-- InstanceEnd --></html>
