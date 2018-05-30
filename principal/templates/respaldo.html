@@ -1,0 +1,122 @@
+{% load staticfiles%}
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/Plantilla.dwt" codeOutsideHTMLIsLocked="false" -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="titulo" -->
+<title>ITT</title>
+<!-- InstanceEndEditable -->
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Satisfy'>
+<link href= "{% static 'css/estilo.css'%}" rel="stylesheet" type="text/css" />
+
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src = "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+<link rel="icon" href="{% static 'img/logo_ITT1.ico'%}" >
+
+</head>
+<script>
+function disabletext(e){
+return false
+}
+function reEnable(){
+return true
+}
+document.onselectstart=new Function ("return false")
+if (window.sidebar){
+document.onmousedown=disabletext
+document.onclick=reEnable
+}
+</script>
+<body><li><center><img src="{% static 'img/encabezado.png'%}" width= 90% height= 28% /></center></div></li>
+
+
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		
+
+		
+	
+
+		<div class="collapse navbar-collapse" id ="topNavBar">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="">
+					
+				</li>
+
+				
+		</div>
+
+
+	</div>	
+</nav> 
+
+
+
+
+
+<div id="global">
+	
+    <div id="menu">
+    	<ul>
+    	
+    	
+    	</ul>
+  </div>
+ 
+    
+    <!-- InstanceBeginEditable name="contenido" -->
+    <div id="titulo">
+      <div><center>INICIO DE SESION ITT</center></div>
+    </div>
+   <div>
+   <center>
+   <form class="form-horizontal alinear" method="POST">{% csrf_token %}
+                      <div class="control-group">
+                        <label class="control-label" for="inputEmail" >Usuario</label>
+                        <div class="controls">
+                          <input name="username" type="text" id="inputEmail" placeholder="Usuario">
+                        </div>
+                      </div>
+
+                      
+
+                      <div class="control-group">
+                        <label class="control-label" for="inputPassword">Contraseña</label>
+                        <div class="controls">
+                          <input name="password" type="password" id="inputPassword" placeholder="Contraseña">
+                        </div>
+                      </div>
+
+                      <div class="control-group">
+                        <div class="controls">
+                          <label class="checkbox">
+                          <input type="checkbox">Recordar</label>
+                          <button type="submit" class="btn btn-info">Ingresar</button>
+                          
+                        </div>
+                      </div>
+                    </form>
+    </center>
+
+
+
+    <li><center><img src="{% static 'img/logos.png'%}" width= 65% height= 25% /></center></div></li>
+
+   </div>
+
+    
+    
+      <div id="creditos">
+    <center>Programacion WEB. Equipo Azul.</br>
+      Proyecto final de la materia.</center>
+    </div>
+    
+</div>
+
+</body>
+<!-- InstanceEnd --></html>

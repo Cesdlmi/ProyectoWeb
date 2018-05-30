@@ -1,0 +1,275 @@
+{% load staticfiles%}
+@charset "utf-8";
+/* CSS Document */
+
+
+body{
+
+	
+}
+
+
+
+
+#global
+{
+	width:100%;
+	max-width:1200px;
+	margin:2px auto;
+	background-color:#ccc;
+	border:3px solid #000;
+	height:auto
+	
+}
+
+
+#menu
+{
+	width: 10%;
+	float: left;
+	padding: 3px;
+	/* [disabled]height: auto; */
+	margin: 5px;
+	font: 90% "Bernard MT Condensed", Arial, Helvetica, sans-serif;
+	
+}
+
+#menu ul,li
+{
+	list-style:none;
+}
+
+#menu ul
+{
+	margin:0;
+	padding:0;
+}
+
+#menu li
+{
+	border-bottom:1px solid #000000;
+}
+
+#menu a
+{
+	text-decoration:none;
+	color:#333333;
+	background:#FFF;
+	display:block;
+	padding:3px 6px;
+	width:100%;
+}
+#menu a:hover{background:#cccccc;}
+
+
+#contenido
+{
+	background-color: #FFF;
+	width: 60%;
+	float: left;
+	padding: 10px;
+	height: auto;
+	margin: 10px 20px;
+	font-size: 12px;
+}
+
+#menu2
+{
+	padding:3px 0px;
+	border-bottom:1px solid #333;
+}
+#menu2 li
+{
+	list-style:none;
+	display:inline;
+	margin-left:10px;
+}
+#menu2 li a
+{
+	color:#000;
+	padding:3px 1em;
+	border: ipx solid #000;
+	border-bottom:none;
+	background:#CEA662;
+	text-decoration:none;
+}
+
+#menu2 li a:hover 
+{
+	color:#000; 
+	background: #999; 
+	border-color: #00F; 
+}
+
+
+
+#titulo
+{
+	width: 100%;
+	font-size: 30px;
+	text-align: center;
+	height: auto;
+	
+}
+#conte
+{
+	width: 100%;
+	font-size: 16px;
+	height: 95%;
+	text-align: left;
+}
+
+
+#publicidad
+{
+	width: 22%;
+	float: right;
+	padding: 3px;
+	height: auto;
+	margin-top: 7px;
+	margin-right: 7px;
+	margin-bottom: 7px;
+	margin-left: 0px;
+	
+}
+#publiSuper
+{
+	background-image: url(images/publiSuper.PNG);
+	background-repeat: no-repeat;
+	background-size:100%;
+	height: 35px;
+}
+#publiMedio
+{
+	background-image:url(images/publiMedio.PNG);
+	background-size:100%;
+	height:auto;
+	width:auto;
+	text-align:center;
+	background-repeat:repeat-y;
+}
+#publiInfe
+{
+	background-image: url(images/publiInfe.PNG);
+	background-repeat: no-repeat;
+	background-size:100%;
+	height:60px;
+}
+
+
+#creditos
+{
+	width:auto;
+	background-color: #000000;
+	padding:5px;
+	height:50px;
+	margin:10px;
+	clear:both;
+}
+
+#creditos 
+{
+	color: #FFFFFF;
+	text-align: center;
+	font: "Times New Roman", Times, serif;
+	font-size: 14px;
+}
+
+
+#mensaje
+{
+	font:Arial, Helvetica, sans-serif;
+	border-radius:5px;
+	
+}
+
+
+#image
+{
+	width:100%;
+}
+
+
+/*
+    these are just the default styles used in the Cycle2 demo pages.  
+    you can use these styles or any others that you wish.
+*/
+
+
+/* set border-box so that percents can be used for width, padding, etc (personal preference) */
+.cycle-slideshow, .cycle-slideshow * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+
+.cycle-slideshow { alignment-adjust:central; width: 65%; height:40%; min-height:300px; max-height:600px; min-width: 200px; max-width: 500px; margin: 10px auto; padding: 0; position: relative;
+    background: url(http://malsup.github.com/images/spinner.gif) 50% 50% no-repeat;
+
+ }
+
+/* slideshow images (for most of the demos, these are the actual "slides") */
+.cycle-slideshow img { 
+    /* 
+    some of these styles will be set by the plugin (by default) but setting them here
+    helps avoid flash-of-unstyled-content
+    */
+    position: absolute; top: 0; left: 0;
+    width: 100%; padding: 0; display: block;
+}
+
+/* in case script does not load */
+.cycle-slideshow img:first-child {
+    position: static; z-index: 100;
+}
+
+/* pager */
+.cycle-pager { 
+    text-align: center; width: 100%; z-index: 500; position: absolute; top: 10px; overflow: hidden;
+}
+.cycle-pager span { 
+    font-family: arial; font-size: 50px; width: 16px; height: 16px; 
+    display: inline-block; color: #ddd; cursor: pointer; 
+}
+.cycle-pager span.cycle-pager-active { color: #D69746;}
+.cycle-pager > * { cursor: pointer;}
+
+
+/* caption */
+.cycle-caption { position: absolute; color: white; bottom: 15px; right: 15px; z-index: 700; }
+
+
+/* overlay */
+.cycle-overlay { 
+    font-family: tahoma, arial;
+    position: absolute; bottom: 0; width: 100%; z-index: 600;
+    background: black; color: white; padding: 15px; opacity: .5;
+}
+
+
+/* prev / next links */
+.cycle-prev, .cycle-next { position: absolute; top: 0; width: 30%; opacity: 0; filter: alpha(opacity=0); z-index: 800; height: 100%; cursor: pointer; }
+.cycle-prev { left: 0;  background: url(http://malsup.github.com/images/left.png) 50% 50% no-repeat;}
+.cycle-next { right: 0; background: url(http://malsup.github.com/images/right.png) 50% 50% no-repeat;}
+.cycle-prev:hover, .cycle-next:hover { opacity: .7; filter: alpha(opacity=70) }
+
+.disabled { opacity: .5; filter:alpha(opacity=50); }
+
+
+/* display paused text on top of paused slideshow */
+.cycle-paused:after {
+    content: 'Pausa'; color: white; background: black; padding: 10px;
+    z-index: 500; position: absolute; top: 10px; right: 10px;
+    border-radius: 10px;
+    opacity: .5; filter: alpha(opacity=50);
+}
+
+/* 
+    media queries 
+    some style overrides to make things more pleasant on mobile devices
+*/
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+    .cycle-slideshow { width: 300px;}
+    .cycle-overlay { padding: 4px }
+    .cycle-caption { bottom: 4px; right: 4px }
+}
+
+}
